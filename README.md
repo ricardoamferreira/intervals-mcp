@@ -4,12 +4,38 @@ A remote MCP server that exposes [Intervals.icu](https://intervals.icu) training
 
 ## Tools
 
+### Activities
+
 | Tool | Description |
 |------|-------------|
-| `get_recent_activities` | Fetch activities from the last N days (default: 28) |
+| `get_recent_activities` | List activities from the last N days (default: 28) |
 | `get_activity_detail` | Full activity detail including HR, pace, power, and cadence streams |
+| `get_activity_intervals` | Detected interval/lap breakdown for a specific activity |
+| `update_activity` | Update activity name, notes, RPE, or sport type |
+| `update_activity_intervals` | Edit detected interval boundaries or labels |
+
+### Fitness & Wellness
+
+| Tool | Description |
+|------|-------------|
 | `get_fitness_metrics` | CTL (fitness), ATL (fatigue), TSB (form) for a date range |
-| `get_activity_intervals` | Interval/lap breakdown for a specific activity |
+| `get_wellness_entry` | Wellness snapshot for a single day (HRV, sleep, fatigue, weight) |
+| `update_wellness_entry` | Log or update wellness data for a day |
+
+### Athlete Profile
+
+| Tool | Description |
+|------|-------------|
+| `get_athlete_profile` | FTP, heart rate zones, pace zones, and sport settings |
+
+### Training Calendar
+
+| Tool | Description |
+|------|-------------|
+| `get_calendar_events` | Planned workouts and races for a date range |
+| `create_calendar_event` | Schedule a new workout on the calendar |
+| `update_calendar_event` | Reschedule or modify a planned workout |
+| `delete_calendar_event` | Remove a workout from the calendar |
 
 ## Environment Variables
 

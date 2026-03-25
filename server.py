@@ -69,7 +69,7 @@ def raise_for_status(response: httpx.Response) -> None:
 
 
 @mcp.tool()
-async def get_recent_activities(days: int = 28) -> dict:
+async def get_recent_activities(days: int = 28) -> list:
     """
     Fetch activities from the last N days.
 
@@ -113,7 +113,7 @@ async def get_activity_detail(activity_id: str) -> dict:
 
 
 @mcp.tool()
-async def get_fitness_metrics(oldest: str, newest: str) -> dict:
+async def get_fitness_metrics(oldest: str, newest: str) -> list:
     """
     Fetch fitness/wellness metrics (CTL, ATL, TSB) for a date range.
 
@@ -134,7 +134,7 @@ async def get_fitness_metrics(oldest: str, newest: str) -> dict:
 
 
 @mcp.tool()
-async def get_activity_intervals(activity_id: str) -> dict:
+async def get_activity_intervals(activity_id: str) -> list:
     """
     Fetch interval/lap data for a specific activity.
 
@@ -193,7 +193,7 @@ async def update_activity(
 async def update_activity_intervals(
     activity_id: str,
     intervals: list,
-) -> dict:
+) -> list:
     """
     Update detected intervals/laps on a completed activity.
     Use this to correct auto-detected interval boundaries, rename segments,
@@ -249,7 +249,7 @@ async def get_athlete_profile() -> dict:
 
 
 @mcp.tool()
-async def get_calendar_events(oldest: str, newest: str) -> dict:
+async def get_calendar_events(oldest: str, newest: str) -> list:
     """
     Fetch planned workouts and events on the training calendar for a date range.
     Power, heart rate, and pace targets are resolved to absolute values.
